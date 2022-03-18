@@ -28,22 +28,28 @@
         <p> <i>Esse é o</i> <b>primeiro trabalho do ano</b> </p>
         <ul>
             <li>Frutas</li>
-        <ol>
-            <li>Banana</li>
-            <li>Maça</li>
-            <li>Abacate</li>
-        </ol>
+        <li>
+            <ol>
+                <li>Banana</li>
+                <li>Maça</li>
+                <li>Abacate</li>
+            </ol>
+        </li>
             <li>Vegetais</li>
-        <ol type="I">
-            <li>Cebola</li>
-            <li>Pimentão</li>
-                <ol type="a">
-                    <li>Verde</li>
-                    <li>Vermelho</li>
-                    <li>Amarelo</li>
-                </ol>
-            <li>Tomate</li>
-        </ol>
+        <li>
+            <ol type="I">
+                <li>Cebola</li>
+                <li>Pimentão</li>
+                    <li>
+                    <ol type="a">
+                        <li>Verde</li>
+                        <li>Vermelho</li>
+                        <li>Amarelo</li>
+                    </ol>
+                    </li>
+                <li>Tomate</li>
+            </ol>
+        </li>
         </ul>
         <br>
         <table>
@@ -86,14 +92,14 @@
         </table>
         <br>
         <form method="post" action="./recebe.php">
-            <fildset>
+            <fieldset>
                 <legend>Identificação</legend>
                 <label for="nome">Nome:</label>
                 <input type="text" id="nome">
                 <br>
                 <label for="senha">Senha:</label>
                 <input type="password" id="senha">
-            </fildset>
+            </fieldset>
             <fieldset>
                 <legend>Pesquisa</legend>
                 Gênero:
