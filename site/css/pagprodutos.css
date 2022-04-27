@@ -1,0 +1,14 @@
+@import'Base.css';
+.celulares{
+    float: left;
+    margin-top: 5px;
+    color: white;
+}
+.celulares:hover{
+    color:rgb(233,61,224);
+}
+#titulo{
+    color: white;
+    margin-left: 270px;
+    margin-top: 5px;
+}
