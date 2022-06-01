@@ -1,0 +1,124 @@
+ <!DOCTYPE HTML>
+<html lang="pt-br">
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta charset="UTF-8">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+ <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js">
+ </script>
+ <LINK rel=STYLESHEET type="text/css" href="../css/pagprincipal.css">
+<title>Página Principal</title>
+</head>
+<body>
+    <header class="container-fluid">
+        <div class="row">
+            <div class="col-6">
+                <a href="./pagprincipal.html">
+                        <img src="../img/logo.jpg" class="rounded" alt="logo do site">
+                </a>
+            </div>
+        </div>
+    </header>
+    <nav class="navbar navbar-expand-sm bg-primary navbar-dark">
+        <div class="container-fluid">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link active cor" href="../html/pagprincipal.html">Página Principal</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active cor" href="../html/pagprodutos.html">Produtos</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active cor" href="../html/pagconheca.html">Conheça-nos</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active cor" href="../html/pagcartao.html">Faça nosso cartão</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+<main class="container-fluid bg-info"> 
+     <div class="row"> 
+     <h5 class="text-light"><b>O CARTÃO DA LOJA TE GARANTE DESCONTOS IMPERDÍVEIS EM TODOS OS PRODUTOS. FAÇA JÁ O SEU PREENCHENDO ESSE FORMULÁRIO!</b></h5> 
+                <br> <br>
+        <form>
+            <div class="col-md-6">
+            <fieldset>
+                <legend><b>Dados para contato:</b></legend>
+                <label for="n" class="form-label"><b>NOME COMPLETO:</b></label>
+            <input type="text" id="n" class="form-control form-control-sm" placeholder="NOME E SOBRENOME" required><br> 
+            <label for="ntel" class="form-label"><b>NÚMERO DO SEU TELEFONE PARA CONTATO:</b></label>
+            <input type="tel" id="ntel" class="form-control form-control-sm" placeholder="DDD9XXXXXXXX" minlength="11" maxlength="14" required> <br> 
+            <label for="em" class="form-label"><b>E-MAIL:</b></label>
+            <input type="email" class="form-control form-control-sm" id="em" placeholder="exemplo@gmail.com" required> <br>
+            </fieldset>
+        </div>
+        <div class="col-md-6"> 
+            <fieldset class="f1">
+            <legend><b>Dados para preencher:</b></legend>
+            <label for="cpf" class="form-label"><b>CPF:</b></label>
+            <input type="tel" id="cpf" class="form-control form-control-sm" placeholder="XXX.XXX.XXX-XX" minlength="14"  maxlength="14" required> <br> 
+            <label for="rg" class="form-label"><b>NÚMERO DO RG:</b></label>
+            <input type="tel" id="rg" class="form-control form-control-sm" placeholder="XXXXXXXXXX" minlength="7"  maxlength="10" required> <br> 
+            <label for="dt" class="form-label"><b>DATA DE NASCIMENTO:</b></label>
+            <input type="date" id="dt" class="form-control form-control-sm" required> <br> 
+            <label for="s" class="form-label"><b>CRIE UMA SENHA NUMÉRICA COM 4 DÍGITOS:</b></label>
+            <input type="password" id="s" class="form-control form-control-sm" placeholder="EXEMPLO: 2310" minlength="4" maxlength="4" required> <br>
+            <label for="sc" class="form-label"><b>CONFIRME A SENHA:</b></label>
+            <input type="password" id="sc" class="form-control form-control-sm" minlength="4" maxlength="4" required> <br>
+            <br>
+            <input type = "submit" value = "enviar" class="btn btn-primary"> <br><br>
+            </fieldset>
+        </div>
+            </form>
+        </div>
+            <table class="table-bordered col-md-12 table-light">
+                <caption class="captiontop"><b>TABELA PARA COMPARAÇÃO</b></caption>
+                <thead>
+                <tr>
+                <th>CELULARES</th>
+                <th  colspan="2">PREÇOS</th>
+                </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                    <td>EM ESTOQUE</td>
+                    <td>SEM CARTÃO</td>
+                    <td>COM CARTÃO</td>
+                    </tr>
+                    <tr>
+                    <td>IPHONE X</td>
+                    <td>R$3000</td>
+                    <td>R$2400</td>
+                    </tr>
+                    <tr>
+                    <td>GALAXY S22</td>
+                    <td>R$5000</td>
+                    <td>R$4000</td>
+                    </tr>
+                    <tr>
+                    <td>XIAOMI X3</td>
+                    <td>R$1900</td>
+                    <td>R$1520</td>
+                    </tr>
+                    </tbody>
+                    <tfoot>
+                    <tr>
+                    <td>GALAXY A20</td>
+                    <td>R$1800</td>
+                    <td>R$1440</td>
+                    </tr>
+                    </tfoot>
+                    </table>
+                    <br>
+</main>
+<footer class="container-fluid bg-primary">
+    <p class="text-light text-center">
+      DESENVOLVIDO POR: RIAN E KAUÃ. 
+        <br> <br> FALE CONOSCO: CENTRALDEAJUDATECRS@GMAIL.COM 
+        <br> <br> FACEBOOK: TECNORS 
+        <br> <br> INSTAGRAM: @TECNORS
+    </p>
+</footer>
+</body>
+</html>
