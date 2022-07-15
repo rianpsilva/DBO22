@@ -1,0 +1,32 @@
+@import'base.css';
+main{
+    width: 100vW;
+    height: 75vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+.animacao {
+    margin-top: 50px;
+    border-radius: 50%;
+    width: 75px;
+    height: 75px;
+    background-color: rgba(113, 158, 240, 0.829);
+    border: 2px solid rgb(20, 224, 163);
+    animation: carregar 1s infinite alternate;
+    -webkit-animation: carregar 1s infinite alternate;
+  }
+  @keyframes carregar {
+    from {
+      transform: translateY(0px);
+      background-color: yellow;
+    }
+    to {
+      transform: translateY(-15px);
+      background-color: rgb(182,182,182);
+    }
+  }
+  h1{
+    font-family:'Times New Roman', Times, serif
+  }
