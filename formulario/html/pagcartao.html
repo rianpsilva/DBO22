@@ -1,0 +1,146 @@
+<!DOCTYPE html> 
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <LINK rel="STYLESHEET" type="text/css" href="../css/pagcartao.css">
+    <title>Cartão da loja</title>
+</head>
+<body>
+    <header> 
+        <a href="./pagprincipal.html">
+            <img src="../img/logo.jpg" alt="logo do site" height="100">
+        </a>
+    </header>
+    <nav> 
+        <ul>
+            <li>
+                <a href="../html/pagprincipal.html">PÁGINA PRINCIPAL</a>
+            </li>
+
+            <li>
+                <a href="../html/pagprodutos.html">PRODUTOS</a>
+            </li>
+
+            <li>
+                <a href="../html/pagconheca.html">CONHEÇA-NOS</a>
+            </li>
+
+            <li>
+                <a href="../html/pagcartao.html">CARTÃO DA LOJA</a>
+            </li>
+            <li>
+                <a href="../html/comprar.html">CARRINHO</a>
+            </li>
+        </ul>
+        <div class="navicon">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+
+
+    </nav>
+
+    <main>
+        <h4><b>O CARTÃO DA LOJA TE GARANTE DESCONTOS IMPERDÍVEIS EM TODOS OS PRODUTOS. FAÇA JÁ O SEU PREENCHENDO ESSE FORMULÁRIO!</b></h4> 
+                 <br> <br>
+                 <form class="formulario" method="post">
+                     <fieldset>
+                         <legend><b>Dados Pessoais::</b></legend>
+                         <label for="n"><b>NOME COMPLETO:</b></label>
+                             <input type="text" id="n" placeholder="NOME E SOBRENOME"><br> 
+                         <label for="cpf"><b>CPF:</b></label>
+                             <input type="tel" id="cpf" placeholder="XXXXXXXXXXX"> <br> 
+                     <label for="s"><b>CRIE UMA SENHA NUMÉRICA COM 8 DÍGITOS:</b></label>
+                         <input type="password" id="s"> <br>
+                     <label for="sc"><b>CONFIRME A SENHA:</b></label>
+                         <input type="password" id="sc"> <br>
+                         <input type = "button" id="botao1" value="Próximo"><br>
+                     </fieldset> 
+                 </form> 
+                     <div id="erro"></div>
+ 
+                 <form class="fase" method="post">
+                     <fieldset>
+                         <legend><b>Dados Profissionais:</b></legend>
+                         <label for="trabalho"><b>PROFISSÃO:</b></label>
+                             <input type="text" id="trabalho" placeholder="DIGITE SUA PROFISSÃO">
+                                 <br>
+                         <b>ESTADO:</b>
+                             <input type="radio" id="estadoRS"  name="est" value="RS"/>RS
+                             <input type="radio" id="estadoSC"  name="est" value="SC"/>SC
+                             <input type="radio" id="estadoPR"  name="est" value="PR"/>PR
+                                 <br> 
+                         <label for="anos"><b>ANOS DE EXPERIÊNCIA:</b></label>
+                             <input type="number" id="anos" placeholder="0-50">
+                                 <br>
+                                 <br>
+                             <input type="button" id="botao2" value="Enviar"><br>
+                     </fieldset>
+                 </form>
+ 
+                 <p class="dados"></p>
+ 
+ 
+ 
+             
+                     <br>
+                     <br>
+                 
+             <table>
+                 <caption><b>TABELA PARA COMPARAÇÃO</b></caption>
+                 <thead>
+                 <tr>
+                 <th>CELULARES</th>
+                 <th  colspan="2">PREÇOS</th>
+                 </tr>
+                 </thead>
+                 <tbody>
+                     <tr>
+                     <td>EM ESTOQUE</td>
+                     <td>SEM CARTÃO</td>
+                     <td>COM CARTÃO</td>
+                     </tr>
+                     <tr>
+                     <td>IPHONE X</td>
+                     <td>R$3000</td>
+                     <td>R$2400</td>
+                     </tr>
+                     <tr>
+                     <td>GALAXY S22</td>
+                     <td>R$5000</td>
+                     <td>R$4000</td>
+                     </tr>
+                     <tr>
+                     <td>XIAOMI X3</td>
+                     <td>R$1900</td>
+                     <td>R$1520</td>
+                     </tr>
+                     </tbody>
+                     <tfoot>
+                     <tr>
+                     <td>GALAXY A20</td>
+                     <td>R$1800</td>
+                     <td>R$1440</td>
+                     </tr>
+                     </tfoot>
+                     </table>
+                     <br>
+     </main>
+
+    <footer> 
+        <p>  DESENVOLVIDO POR: RIAN E KAUÃ. </p>
+        <img src="../img/ifrs.png" alt="Logo IFRS" width="200" height="100">
+         <p>FALE CONOSCO: CENTRALDEAJUDATECRS@GMAIL.COM</p>
+    <div class="icons"><img class="icon1" src="../img/facebook.png" alt="Facebook" width="30" height="30">FACEBOOK: TECNORS</div>
+    <br>
+    <div class="icons"><img class="icon" src="../img/Instagram.png" alt="Instagram" width="30" height="30">INSTAGRAM: @TECNORS</div>
+    </footer>
+    
+    <script src="../menu.js"></script>
+    <script src="../formulario.js"></script>
+</body>
+
+</html>
