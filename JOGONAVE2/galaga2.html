@@ -189,14 +189,14 @@
 			}*/
 
 			window.addEventListener('keydown', (e)=>{
-				let div2Left= parseInt(getComputedStyle(div2).left);
-				if(e.key=="a"||e.key=="ArrowLeft"){
-					div2.style.left=div2Left-20;
-				}
-				if(e.key=="d"||e.key=="ArrowRight"){
-					div2.style.left=div2Left+20;
-				}
-			});
+				if(e.key=="a" || e.key=="ArrowLeft"){
+					move('esquerda')}
+				if(e.key=="d" || e.key=="ArrowRight"){
+					move('direita')}
+				if(e.key=="ArrowUp" && contaTiro==0){
+					disparar()}
+			}
+				
 				
             //Ao carregar a página estas linhas são executadas. 
 			let contador = 0;
