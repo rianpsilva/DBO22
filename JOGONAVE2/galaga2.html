@@ -1,0 +1,231 @@
+<!DOCTYPE >
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jogo</title>
+    <link rel="stylesheet" href="style.css">
+	<link rel="manifest" href="./manifest.json" />
+	<script>
+		if ('serviceWorker' in navigator) {
+			navigator.serviceWorker.register('./sw.js')
+				.then(function () { console.log('service worker registered'); })
+				.catch(function () { console.log('service worker failed'); });
+		}
+	</script>
+    </head>
+	<body>
+		<div id="fundo" class="fundoInicio">
+		
+		<div id="div2" class="inicio" >
+		</div>
+		<div id="div1" class="inicio">
+		</div>
+		<div class="disparos"></div>
+		<div class="painel">
+			
+
+				<div class="pontos">Pontuação:</div>
+				<hr>
+				<button type="button"  id="esquerda">ESQUERDA</button>
+				<button type="button"  id="direita" >DIREITA</button><br>
+				<hr>
+				<button type="button"  id="tiro">ATIRAR</button>
+				<button type="button"  id="start" class="start">INICIAR</button>
+				<hr>
+			
+		</div>
+	</div>
+		<script>
+            // move inimigo
+			function moverdireita(){
+				let div2Left= parseInt(getComputedStyle(div2).left);
+				let fundoWidth= parseInt(getComputedStyle(fundo).width);
+				let div2Width= parseInt(getComputedStyle(div2).width);
+
+				div2.style.left = div2Left +5;
+				if ( div2Left >=  fundoWidth - div2Width){
+					clearInterval(m);
+					m = setInterval ("moveresquerda()",15);
+				}
+			}
+			function moveresquerda(){
+				let div2Left= parseInt(getComputedStyle(div2).left);
+				let fundoWidth= parseInt(getComputedStyle(fundo).width);
+				let div2Width= parseInt(getComputedStyle(div2).width);
+
+				div2.style.left = div2Left -5;
+				if ( div2Left <= 0){
+					clearInterval(m);
+					m = setInterval ("moverdireita()",15);
+				}
+			}
+
+            // Mover Nave
+			function move(Direcao) {
+				if (contador != 0) {
+					para();
+				}
+				if (Direcao == "direita") {
+					timer = setInterval("direita()",15);
+					contador ++;
+				}
+
+				if (Direcao == "esquerda") {
+					timer = setInterval("esquerda()",15);
+					contador ++;
+				}
+			}
+
+
+            function direita() {
+				let div1Left= parseInt(getComputedStyle(div1).left);
+				let fundoWidth= parseInt(getComputedStyle(fundo).width);
+				let div1Width= parseInt(getComputedStyle(div1).width);
+
+				div1.style.left = div1Left+5;
+				if ( div1Left >= fundoWidth  - div1Width){
+					clearInterval(timer);
+					timer = setInterval ("esquerda()",15);
+				}
+			}
+
+			function esquerda() {
+				let div1Left= parseInt(getComputedStyle(div1).left);
+				
+				div1.style.left = div1Left-5;
+				if ( div1Left <= 0){
+					clearInterval(timer);
+					timer = setInterval ("direita()",15);
+				}
+			}
+
+            // Parar
+			function para2(){
+				clearInterval(m);
+			}
+			function para(){
+				clearInterval(timer);
+			}
+
+			//DIPARAR//
+			let pontos = 0
+			function disparar(){
+				musica.play()
+				musica.volume=0.5;
+				contaTiro=1
+				let left= parseInt(window.getComputedStyle(div1).getPropertyValue("left"));
+				let top= parseInt(window.getComputedStyle(div1).getPropertyValue("top"));
+				let disparos= document.querySelector(".disparos")
+				let tiro= document.createElement("div");
+				tiro.setAttribute("class","tiro");
+				disparos.appendChild(tiro);
+				//let pnts= setAttribute("class","pontos")
+				//pnts.appendChild(pontos)
+				pontuacao = document.querySelector(".pontos");
+				tiro.style.top= top
+				timerTiro=setInterval(()=>{
+					//COLISAO//
+					let tiroLeft=parseInt(getComputedStyle(tiro).left);
+					let tiroTop= parseInt(getComputedStyle(tiro).top);
+
+					let div2Left= parseInt(getComputedStyle(div2).left);
+					let div2Top= parseInt(getComputedStyle(div2).top);
+					let div2Height= parseInt(getComputedStyle(div2).height);
+					let div2Width= parseInt(getComputedStyle(div2).width);
+				
+					let fundoHeight= parseInt(getComputedStyle(fundo).height);
+					let fundoWidth= parseInt(getComputedStyle(fundo).width);
+
+					if (((tiroLeft >= div2Left)&&(tiroLeft <= div2Left + div2Width))&&
+						((tiroTop >= div2Top)&&(tiroTop <= div2Top + div2Height))){
+							disparos.removeChild(tiro);
+							pontos+=1
+							pontuacao.innerHTML="Pontuação: "+pontos
+							contaTiro=0
+							musica2.play()
+							musica2.volume=0.5
+					}
+
+					if (((div2Left >= tiroLeft)&&(div2Left <= tiroLeft))&&
+						((div2Top >= tiroTop)&&(div2Top <= tiroTop))){
+							disparos.removeChild(tiro);
+							pontos+=1
+							pontuacao.innerHTML="Pontuação: "+pontos
+							contaTiro=0
+							musica2.play()
+							musica2.volume=0.5
+							
+					}
+
+					if (((tiroLeft >= div2Left)&&(tiroLeft <= div2Left + div2Width))&&
+						((tiroTop >= div2Top)&&(tiroTop <= div2Top + div2Height))&&((pontos==5))){
+							para2();
+							para()
+							reinicio()
+					}
+					if (((div2Left >= tiroLeft)&&(div2Left <= tiroLeft))&&
+						((div2Top >= tiroTop)&&(div2Top <= tiroTop))&&((pontos==5))){
+							para2();
+							para()
+							reinicio()
+					}
+
+					tiro.style.left= left;
+					tiro.style.top=parseInt(getComputedStyle(tiro).top)-30;
+					if(tiroTop<=0){
+				clearInterval(timerTiro)
+				disparos.removeChild(tiro);
+				contaTiro=0
+			 }
+			 },50);
+				//setTimeout("removeTiro()",2000)//
+		    }
+			function removeTiro(){
+				let disparos= document.querySelector(".disparos")
+				disparos.innerHTML=" "
+			}
+
+			function iniciar(){
+				pontuacao=document.querySelector(".pontos")
+				pontos=0
+				pontuacao.innerHTML="Pontuação: "+pontos
+				let telaInicio=document.querySelector('.fundoInicio')
+				let botaoInicio=document.querySelector('#start')
+				let nave2=document.querySelector('#div2')
+				let nave1=document.querySelector('#div1')
+				nave2.setAttribute("class","nave2")
+				nave1.setAttribute("class","nave1")
+				telaInicio.setAttribute("class","fundo")
+				botaoInicio.setAttribute("class","inicio")
+				m = setInterval("moverdireita()", 15)
+			}
+			function reinicio(){
+				let telaJogo=document.querySelector('.fundo')
+				let botaoJogo=document.querySelector('.inicio')
+				let nave2=document.querySelector('#div2')
+				let nave1=document.querySelector('#div1')
+				nave2.setAttribute("class","inicio")
+				nave1.setAttribute("class","inicio")
+				telaJogo.setAttribute("class","fundoInicio")
+				botaoJogo.setAttribute("class","start")
+			}
+
+			let musica=new Audio()
+			musica.src='tiro.wav'
+			let musica2=new Audio()
+			musica2.src='acerto.wav'
+            //FUNÇÕES
+			let contador = 0;
+            let cont = 0;
+			contaTiro=0
+            
+            document.querySelector("#esquerda").addEventListener("click",()=>{ move('esquerda')});
+            document.querySelector("#direita").addEventListener("click",()=>{ move('direita')});
+			document.querySelector("#tiro").addEventListener("click", ()=>{if(contaTiro==0){
+				disparar()
+				}});
+			document.querySelector("#start").addEventListener("click", ()=>{iniciar()});
+		</script>
+	</body>
+</html>

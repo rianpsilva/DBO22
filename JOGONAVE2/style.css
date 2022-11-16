@@ -1,0 +1,85 @@
+.fundo {
+     position: absolute;
+     top: 5vw;
+     left:5vw;
+     width: 90vw;
+     height: 40vw;
+     background-color: black;
+     background-size: cover;
+     text-align: center;
+	}
+.painel {
+    position: absolute;
+     top: 42vw; 
+     left:10vw; 
+     text-align: center;
+
+}  
+#div2, .nave2 {
+    position: absolute; 
+    top: 5vw; 
+    left: 5vw; 
+    width: 5vw; 
+    height: 5vw; 
+    text-align: center;
+    background-image: url('./inimigo.png');
+    background-size: cover;
+}
+#div1, .nave2 {
+    position: absolute;
+    top: 30vw;
+    left: 15vw; 
+    width: 7vw; 
+    height: 5vw; 
+    text-align: center;
+    background-image: url('./jogador.png');
+    background-size: cover;
+}
+.tiro{
+    position: absolute;
+    width: 1.5vw;
+    height: 3.5vw;
+    background-color: red;
+}
+.painel{
+    left: 25vw;
+}
+button{
+    width: 20vw;
+    height: 10vw;
+    border-radius: 50px;
+}
+#esquerda{
+    background-color: green;
+}
+#direita{
+    background-color: yellow;
+}
+#tiro{
+    background-color: red;
+}
+body{
+    background-color: blueviolet;
+}
+.pontos{
+    font-size: large;
+}
+.fundoInicio{
+    background-image: url(./fundo.jpeg);
+    position: absolute;
+     top: 5vw;
+     left:5vw;
+     width: 90vw;
+     height: 40vw;
+     background-size: cover;
+     text-align: center;
+}
+.inicio{
+    display: none;
+}
+.ingame{
+    display: block;
+}
+.start{
+    display: inline;
+}
